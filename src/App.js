@@ -1,7 +1,8 @@
-
+import react ,{Component} from 'react'
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './Components/MenuComponent';
-import { DISHES } from './shared/dishes';
+import { DISHES } from './Components/dishes';
+import Dish from './Components/DishdetailComponent'
 
 
 class App extends Component {
@@ -19,11 +20,14 @@ class App extends Component {
         <Navbar dark color="primary">
           <div className="container">
             <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-
           </div>
-          <Menu dishes={this.state.dishes} />
+      
         </Navbar>
+        <Menu dishes={this.state.dishes}  />
+        <Dish dishes={this.state.dishes}></Dish>
+        
       </div>
     );
   }
 }
+export default App;
